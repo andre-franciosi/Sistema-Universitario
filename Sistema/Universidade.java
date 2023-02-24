@@ -1,5 +1,6 @@
 import java.util.ArrayList;
-import java.util.Scanner;;
+import java.util.Scanner;
+import java.util.HashMap;
 
 public class Universidade{
 
@@ -8,6 +9,8 @@ public class Universidade{
     private ArrayList <Professor> professores;
     private double renda;
     String nome;
+
+    HashMap<String, Integer> alunos_hash = new HashMap<String, Integer>();
 
 
     public Universidade(int salas, double renda, String nome)
@@ -63,6 +66,7 @@ public class Universidade{
                 System.out.println(alunos.get(i)); 		
             }   
             System.out.println("O numero de alunos cadastrados é de " + alunos.size());
+            System.out.print(alunos_hash);
             System.out.println(" ");
 
             sistema();
@@ -93,6 +97,7 @@ public class Universidade{
             System.out.println("Digite o codigo de cadastro: ");
             coda = teclado.nextInt();
 
+            alunos_hash.put(nomea, coda);
             Aluno_poli x = new Aluno_poli(coda,nomea,idadea,mensalidadea,aulasa,peridoa,cursoa);
             matricular(x);
 
